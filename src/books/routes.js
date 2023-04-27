@@ -3,7 +3,7 @@ const bookRouter = Router();
 
 const Book = require("./model");
 
-const { getAllBooks, addBook } = require("./controllers");
+const { getAllBooks, addBook, updateBookAuthor, deleteBook } = require("./controllers");
 
 bookRouter.get("/books/getallbooks", getAllBooks);
 

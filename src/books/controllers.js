@@ -27,7 +27,9 @@ const addBook = async (req, res) => {
 // update book findOneAndUpdate
 const updateBookAuthor = async (req, res) => {
     try {
-        const updatedBook = await Book.findOneAndUpdate({ _id: req.params })
+        const updateBook = await Book.findOneAndUpdate({ _id: req.params })
+
+        res.status(200).json({ message: "success", updatedBook: updatedBook });
     } catch {
         res.status(400).json({ message: "error", error: error.message });
     }
@@ -36,6 +38,7 @@ const updateBookAuthor = async (req, res) => {
 const deleteBook = async (req, res) => {
     try {
         const deletedBook = await Book.findOneAndDelete({ _id: req.params });
+        
         res.status(200).json({ message: "success", deletedBook: deletedBook });
     } catch (error) {
         res.status(400).json({ message: "error", error: error.message });

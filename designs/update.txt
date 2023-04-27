@@ -46,9 +46,4 @@ SuccessResponse:
             properties:
                 title: string
                 author: string  
-                genre: string
-
-
-
-
-                
+                genre: string  
